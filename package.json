@@ -1,0 +1,16 @@
+{
+  "name": "otcg_card_crawler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MinYu",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "better-sqlite3": "^11.5.0",
+    "puppeteer": "^23.7.0"
+  }
+}
