@@ -1,7 +1,8 @@
 /** 主要處理：
  *  1. 取得路徑
  *  2. 選擇 one piece 卡牌官網的語言
- */ 
+ *  3. 處理卡牌系列名稱
+ */
 
 const path = require('path');
 const readline = require('readline');
@@ -59,6 +60,21 @@ class Common {
         return choice === 'Y'
             ? 'https://www.onepiece-cardgame.com'
             : 'https://asia-tw.onepiece-cardgame.com';
+    }
+
+    /**
+    * 根據給定的 series_name 提取 `【】` 內的文字，若無 `【】`，則返回處理過的文本
+    * 
+    * @param {string} seriesName - 卡片系列原始名稱
+    * @returns {string} 處理後的系列名稱
+    */
+    processSeriesName(seriesName) {
+        const match = seriesName.match(/【(.*?)】/);
+        if (match) {
+            return match[1];
+        } else {
+            return seriesName.split('<br')[0].trim();
+        }
     }
 
 }
